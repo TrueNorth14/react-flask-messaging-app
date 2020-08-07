@@ -10,7 +10,6 @@ import {
     Button,
 } from '@material-ui/core';
 import ChatImage from '../assets/chat.png';
-import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -46,7 +45,7 @@ const useStyles = makeStyles({
 const Login = () => {
     const classes = useStyles();
     const [name, setName] = useState("");
-    let history = useHistory();
+    // let history = useHistory();
 
     const handleChange = ({ val }) => {
         setName(val)
@@ -58,7 +57,7 @@ const Login = () => {
     }
 
     const handleNavigate = () => {
-        history.push('/chatroom')
+        console.log('hello')
     }
 
     return (

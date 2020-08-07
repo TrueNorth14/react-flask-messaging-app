@@ -42,22 +42,23 @@ const useStyles = makeStyles({
 
 })
 
-const Login = ({name, setName}) => {
+const Login = ({ states, stateFunctions }) => {
     const classes = useStyles();
-    // const [name, setName] = useState("");
-    // let history = useHistory();
+
+    const { name, isEntered } = states;
+    const { setName, setIsEntered } = stateFunctions;
 
     const handleChange = ({ val }) => {
         setName(val)
     }
 
-    const handleEnter = (ev) => {
+    const handleKeyEnter = (ev) => {
         if (ev.key === 'Enter')
             handleNavigate()
     }
 
     const handleNavigate = () => {
-        console.log('hello')
+        setIsEntered(true)
     }
 
     return (
@@ -72,7 +73,7 @@ const Login = ({name, setName}) => {
                         <Box fontWeight="fontWeightLight">Enter your name below</Box>
                     </Typography>
                     <div className={classes.textField}>
-                        <TextField variant="outlined" onKeyPress={handleEnter} value={name} onChange={handleChange} placeholder="Enter your name" />
+                        <TextField variant="outlined" onKeyPress={handleKeyEnter} value={name} onChange={handleChange} placeholder="Enter your name" />
                     </div>
                 </CardContent>
                 <div className={classes.button}>

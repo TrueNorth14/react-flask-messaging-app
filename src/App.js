@@ -4,9 +4,11 @@ import ChatRoom from './components/ChatRoom';
 
 const App = () => {
   const [name, setName] = useState("");
-
+  const [isEntered, setIsEntered] = useState(false);
+  
   return (
-    <Login name={name} setName={setName} />
+    (isEntered) ? <ChatRoom states={{ name }} /> :
+      <Login states={{ name, isEntered }} stateFunctions={{ setName, setIsEntered }} />
   );
 }
 

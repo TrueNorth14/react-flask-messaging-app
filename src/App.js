@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Login from './components/Login';
 import ChatRoom from './components/ChatRoom';
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
+  const [name, setName] = useState("");
+
   return (
-    <Login />
+    <Login name={name} setName={setName} />
   );
 }
 

@@ -10,6 +10,7 @@ import {
     Button,
 } from '@material-ui/core';
 import ChatImage from '../assets/chat.png';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles({
         justifyItems: "center",
     },
     login: {
-        height: "500px",
+        height: "auto",
         width: "300px",
         marginTop: "70px",
         alignItems: "center",
@@ -35,18 +36,29 @@ const useStyles = makeStyles({
     button: {
         display: "flex",
         position: "relative",
-        bottom: "0px",
-        justifyContent: "center"
+        bottom: "10px",
+        justifyContent: "center",
+        marginBottom: "20px"
     }
 
 })
 
 const Login = () => {
     const classes = useStyles();
-    const [name, setName] = useState('')
+    const [name, setName] = useState("");
+    let history = useHistory();
 
-    const handleChange = ({val}) => {
+    const handleChange = ({ val }) => {
         setName(val)
+    }
+
+    const handleEnter = (ev) => {
+        if (ev.key === 'Enter')
+            handleNavigate()
+    }
+
+    const handleNavigate = () => {
+        history.push('/chatroom')
     }
 
     return (
@@ -61,15 +73,12 @@ const Login = () => {
                         <Box fontWeight="fontWeightLight">Enter your name below</Box>
                     </Typography>
                     <div className={classes.textField}>
-                        <TextField variant="outlined" value={name} onChange={handleChange} placeholder="Enter your name" />
+                        <TextField variant="outlined" onKeyPress={handleEnter} value={name} onChange={handleChange} placeholder="Enter your name" />
                     </div>
                 </CardContent>
-                {/* <CardActionArea> */}
-
                 <div className={classes.button}>
-                    <Button variant="contained" size="large"> Enter Room </Button>
+                    <Button variant="contained" onClick={handleNavigate} size="large"> Enter Room </Button>
                 </div>
-                {/* </CardActionArea> */}
             </Card>
         </div>
     )

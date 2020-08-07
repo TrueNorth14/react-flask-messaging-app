@@ -42,9 +42,9 @@ const useStyles = makeStyles({
 
 })
 
-const Login = () => {
+const Login = ({name, setName}) => {
     const classes = useStyles();
-    const [name, setName] = useState("");
+    // const [name, setName] = useState("");
     // let history = useHistory();
 
     const handleChange = ({ val }) => {

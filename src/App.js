@@ -6,15 +6,6 @@ import ChatRoom from './components/ChatRoom';
 const App = () => {
   return (
     <Login />
-    // <Router>
-    //   <Switch>
-    //     <Route exact path="/">
-    //       <Login />
-    //     </Route>
-    //     <Route path="/chatroom" render={(p) => < ChatRoom {...p} />} />
-
-    //   </Switch>
-    // </Router>
   );
 }
 

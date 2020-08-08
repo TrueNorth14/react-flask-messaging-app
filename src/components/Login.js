@@ -1,49 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     TextField,
     Card,
-    makeStyles,
     CardMedia,
     Typography,
     CardContent,
     Box,
     Button,
+    withStyles
 } from '@material-ui/core';
-import ChatImage from '../assets/chat.png';
+import ChatImage from '../assets/images/chat.png';
+import loginStyle from '../assets/styles/loginStyle';
 
-const useStyles = makeStyles({
-    root: {
-        display: "flex",
-        justifyContent: "center",
-        justifyItems: "center",
-    },
-    login: {
-        height: "auto",
-        width: "300px",
-        marginTop: "70px",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    image: {
-        height: "230px"
-    },
-    textField: {
-        display: "flex",
-        marginTop: "40px",
-        justifyContent: "center"
-    },
-    button: {
-        display: "flex",
-        position: "relative",
-        bottom: "10px",
-        justifyContent: "center",
-        marginBottom: "20px"
-    }
-
-})
-
-const Login = ({ states, stateFunctions }) => {
-    const classes = useStyles();
+const Login = ({ states, stateFunctions, ...props }) => {
+    const { classes } = props;
 
     const { name, isEntered } = states;
     const { setName, setIsEntered } = stateFunctions;
@@ -85,4 +55,4 @@ const Login = ({ states, stateFunctions }) => {
     )
 }
 
-export default Login;
+export default withStyles(loginStyle)(Login);

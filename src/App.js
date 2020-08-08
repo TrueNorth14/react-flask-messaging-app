@@ -15,12 +15,22 @@ const reducer = (state, { field, value }) => {
 }
 
 const App = () => {
-  const [name, setName] = useState("");
-  const [isEntered, setIsEntered] = useState(false);
-  
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const { name, isEntered } = state;
+
+  const onChangeName = (e) => {
+    dispatch({ field: "name", value: e.target.value })
+    console.log({ name })
+  }
+
+  const onChangeEntered = (e) => {
+    dispatch({ field: "isEntered", value: e })
+  }
+
   return (
-    (isEntered) ? <ChatRoom states={{ name }} /> :
-      <Login states={{ name, isEntered }} stateFunctions={{ setName, setIsEntered }} />
+    (isEntered) ? <ChatRoom name={name} /> :
+      <Login states={{ name, isEntered }} stateFunctions={{ onChangeName, onChangeEntered }} />
   );
 }
 

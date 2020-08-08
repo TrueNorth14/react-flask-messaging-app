@@ -16,11 +16,10 @@ const Login = ({ states, stateFunctions, ...props }) => {
     const { classes } = props;
 
     const { name, isEntered } = states;
-    const { setName, setIsEntered } = stateFunctions;
+    const { onChangeName, onChangeEntered } = stateFunctions;
 
-    const handleChange = ({ val }) => {
-        setName(val)
-        console.log(name)
+    const handleChange = ( val ) => {
+        onChangeName(val)
     }
 
     const handleKeyEnter = (ev) => {
@@ -29,7 +28,7 @@ const Login = ({ states, stateFunctions, ...props }) => {
     }
 
     const handleNavigate = () => {
-        setIsEntered(true)
+        onChangeEntered(true)
     }
 
     return (
@@ -44,11 +43,11 @@ const Login = ({ states, stateFunctions, ...props }) => {
                         <Box fontWeight="fontWeightLight">Enter your name below</Box>
                     </Typography>
                     <div className={classes.textField}>
-                        <TextField variant="outlined" onKeyPress={handleKeyEnter} value={name} onChange={handleChange} placeholder="Enter your name" />
+                        <TextField variant="outlined" name={name} onKeyPress={handleKeyEnter} onChange={handleChange} placeholder="Enter your name" />
                     </div>
                 </CardContent>
                 <div className={classes.button}>
-                    <Button variant="contained" onClick={handleNavigate} size="large"> Enter Room </Button>
+                    <Button variant="contained" disabled={name==""} onClick={handleNavigate} size="large"> Enter Room </Button>
                 </div>
             </Card>
         </div>

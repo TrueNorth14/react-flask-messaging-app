@@ -7,9 +7,12 @@ const loginStyle = {
     login: {
         height: "auto",
         width: "300px",
-        marginTop: "70px",
+        // marginTop: "70px",
+        position: "absolute",
+        top: "50%",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        transform: "translateY(-50%)"
     },
     image: {
         height: "230px"

@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useStyles } from '@material-ui/core';
 
 
-const ChatRoom = ({ states }) => {
-    const { name } = states
+const ChatRoom = ({ name }) => {
+    // const { name } = states
 
     return (
         <div>
@@ -12,4 +12,4 @@ const ChatRoom = ({ states }) => {
     )
 }
 
-export default ChatRoom
+export default ChatRoom;

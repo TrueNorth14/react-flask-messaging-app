@@ -7,7 +7,7 @@ const ChatRoom = ({ states }) => {
 
     return (
         <div>
-            hello { name}!
+            hello { name }!
         </div>
     )
 }

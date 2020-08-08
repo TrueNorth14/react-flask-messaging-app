@@ -1,6 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useReducer } from 'react';
 import Login from './components/Login';
-import ChatRoom from './components/ChatRoom';
+import ChatRoom from './components/ChatRoom/ChatRoom';
+
+const initialState = {
+  name: "",
+  isEntered: false
+};
+
+const reducer = (state, { field, value }) => {
+  return {
+    ...state,
+    [field]: value
+  }
+}
 
 const App = () => {
   const [name, setName] = useState("");

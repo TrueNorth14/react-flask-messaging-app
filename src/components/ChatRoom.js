@@ -1,11 +1,13 @@
-import React from 'react';
-import {useStyles} from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { useStyles } from '@material-ui/core';
 
 
-const ChatRoom = () => {
+const ChatRoom = ({ states }) => {
+    const { name } = states
+
     return (
         <div>
-            hello bob!
+            hello { name}!
         </div>
     )
 }

@@ -50,6 +50,7 @@ const Login = ({ states, stateFunctions }) => {
 
     const handleChange = ({ val }) => {
         setName(val)
+        console.log(name)
     }
 
     const handleKeyEnter = (ev) => {

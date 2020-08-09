@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, Typography } from '@material-ui/core';
-import { withStyles } from '@material-ui/core';
+import { Paper, Typography, withStyles } from '@material-ui/core';
 import chatRoomStyle from '../../assets/styles/chatroomStyle';
 
 const ChatRoom = ({ name, ...props }) => {
@@ -8,11 +7,14 @@ const ChatRoom = ({ name, ...props }) => {
 
     return (
         <div className={classes.root}>
-            <Card className={classes.chatRoom}>
+            <Paper elevation={8} className={classes.container}>
+                <div>
+
+                </div>
                 <Typography>
                     hello {name} !!
-            </Typography>
-            </Card>
+                </Typography>
+            </Paper>
         </div>
     )
 }

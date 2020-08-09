@@ -1,4 +1,3 @@
-import ChatRoom from "../../components/ChatRoom/ChatRoom"
 
 const chatRoomStyle = {
     root: {
@@ -7,8 +6,11 @@ const chatRoomStyle = {
         justifyItems: "center",
     },
     chatRoom: {
+        width: "90%",
         maxWidth: "500px",
-        minWidth: "300px",
+        position: "absolute",
+        top: "50%",
+        transform: "translateY(-50%)"
     }
 }
 

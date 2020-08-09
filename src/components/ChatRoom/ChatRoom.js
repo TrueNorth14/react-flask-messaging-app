@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { useStyles } from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 
 
-const ChatRoom = ({ name }) => {
-    // const { name } = states
+const ChatRoom = ({ name, ...props }) => {
 
     return (
         <div>

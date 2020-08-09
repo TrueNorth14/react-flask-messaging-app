@@ -3,8 +3,8 @@ import Login from './components/Login';
 import ChatRoom from './components/ChatRoom/ChatRoom';
 
 const initialState = {
-  name: "",
-  isEntered: false
+  name: "default",
+  isEntered: true
 };
 
 const reducer = (state, { field, value }) => {

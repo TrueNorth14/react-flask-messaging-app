@@ -5,9 +5,9 @@ const chatRoomStyle = {
         justifyContent: "center",
         justifyItems: "center",
     },
-    chatRoom: {
+    container: {
         width: "90%",
-        maxWidth: "500px",
+        maxWidth: "600px",
         position: "absolute",
         top: "50%",
         transform: "translateY(-50%)"

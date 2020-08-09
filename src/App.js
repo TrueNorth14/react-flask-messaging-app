@@ -7,13 +7,13 @@ import { ThemeProvider } from '@material-ui/styles';
 
 const theme = createMuiTheme({
   palette: {
-    type: "dark"
+    type: "light"
   }
 })
 
 const initialState = {
   name: "default",
-  isEntered: false
+  isEntered: true
 };
 
 const reducer = (state, { field, value }) => {

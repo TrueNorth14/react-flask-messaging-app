@@ -18,7 +18,8 @@ const loginStyle = {
     },
     textField: {
         display: "flex",
-        marginTop: "40px",
+        marginTop: "20px",
+        marginBottom: "20px",
         justifyContent: "center"
     },
     button: {

@@ -7,12 +7,13 @@ const ChatRoom = ({ name, ...props }) => {
     const { classes } = props;
 
     return (
-        <Card className={classes.root}>
-            <Typography>
-
-                hello {name} sdfsd!d
+        <div className={classes.root}>
+            <Card className={classes.chatRoom}>
+                <Typography>
+                    hello {name} !!
             </Typography>
-        </Card>
+            </Card>
+        </div>
     )
 }
 

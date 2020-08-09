@@ -1,10 +1,19 @@
-import React, { useState, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import Login from './components/Login';
 import ChatRoom from './components/ChatRoom/ChatRoom';
+import MyAppBar from './components/MyAppBar';
+import { createMuiTheme, CssBaseline } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    type: "dark"
+  }
+})
 
 const initialState = {
   name: "default",
-  isEntered: true
+  isEntered: false
 };
 
 const reducer = (state, { field, value }) => {
@@ -29,8 +38,14 @@ const App = () => {
   }
 
   return (
-    (isEntered) ? <ChatRoom name={name} /> :
-      <Login states={{ name, isEntered }} stateFunctions={{ onChangeName, onChangeEntered }} />
+    <div>
+      <ThemeProvider theme={theme}>
+        <CssBaseline/>
+        <MyAppBar />
+        {isEntered ? <ChatRoom name={name} /> :
+          <Login states={{ name, isEntered }} stateFunctions={{ onChangeName, onChangeEntered }} />}
+      </ThemeProvider>
+    </div>
   );
 }
 

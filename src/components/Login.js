@@ -9,7 +9,7 @@ import {
     Button,
     withStyles
 } from '@material-ui/core';
-import ChatImage from '../assets/images/chat.png';
+import ChatImage from '../assets/images/chat.svg';
 import loginStyle from '../assets/styles/loginStyle';
 
 const Login = ({ states, stateFunctions, ...props }) => {
@@ -48,14 +48,14 @@ const Login = ({ states, stateFunctions, ...props }) => {
                         <Box fontWeight="fontWeightLight">The Global Room</Box>
                     </Typography>
                     <Typography variant="overline" align="center" >
-                        <Box fontWeight="fontWeightLight">Enter your name below</Box>
+                        <Box fontWeight="fontWeightLight">Everything is permitted.</Box>
                     </Typography>
                     <div className={classes.textField}>
                         <TextField variant="outlined" name={name} onKeyPress={handleKeyEnter} onChange={handleChange} placeholder="Enter your name" />
                     </div>
                 </CardContent>
                 <div className={classes.button}>
-                    <Button color="primary" variant="outlined" disabled={name == ""} onClick={handleNavigate} size="large"> Enter Room </Button>
+                    <Button color="primary" variant="contained" disabled={name === ""} onClick={handleNavigate} size="large"> Enter Room </Button>
                 </div>
             </Card>
         </div>

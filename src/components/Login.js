@@ -16,7 +16,7 @@ const Login = ({ states, stateFunctions, ...props }) => {
     const { classes } = props;
     const { name } = states;
     const { onChangeName, onChangeEntered } = stateFunctions;
-    const [elevation, setElevation] = useState(8);
+    const [elevation, setElevation] = useState(5);
 
     const handleChange = (val) => {
         onChangeName(val)
@@ -36,7 +36,7 @@ const Login = ({ states, stateFunctions, ...props }) => {
     }
    
     const decreaseElevation = () => {
-        setElevation(8)
+        setElevation(5)
     }
 
     return (
@@ -55,7 +55,7 @@ const Login = ({ states, stateFunctions, ...props }) => {
                     </div>
                 </CardContent>
                 <div className={classes.button}>
-                    <Button color="primary" variant="contained" disabled={name == ""} onClick={handleNavigate} size="large"> Enter Room </Button>
+                    <Button color="primary" variant="outlined" disabled={name == ""} onClick={handleNavigate} size="large"> Enter Room </Button>
                 </div>
             </Card>
         </div>

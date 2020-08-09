@@ -7,7 +7,6 @@ const loginStyle = {
     login: {
         height: "auto",
         width: "300px",
-        // marginTop: "70px",
         position: "absolute",
         top: "50%",
         alignItems: "center",

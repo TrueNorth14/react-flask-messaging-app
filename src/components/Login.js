@@ -34,7 +34,7 @@ const Login = ({ states, stateFunctions, ...props }) => {
     const increaseElevation = () => {
         setElevation(15)
     }
-   
+
     const decreaseElevation = () => {
         setElevation(5)
     }

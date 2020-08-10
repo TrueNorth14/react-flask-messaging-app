@@ -14,9 +14,9 @@ const chatRoomStyle = {
         height: "70%"
     },
     header: {
-        height: "15%",
+        height: "13%",
         // backgroundColor: "#545454",
-        textAlign: "center"
+        // textAlign: "center"
     },
     input: {
         width: "100%",
@@ -24,12 +24,10 @@ const chatRoomStyle = {
         position: "absolute"
     },
     log: {
-        height: "70%",
-        // maxHeight: "100%",
-        // minHeight: "500px",
+        height: "75%",
+        display: "flex",
         flexDirection: "column-reverse",
-        overflowY: "scroll",
-        // overflow: "auto"
+        overflowY: "auto",
     }
 
 }

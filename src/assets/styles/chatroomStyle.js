@@ -12,6 +12,11 @@ const chatRoomStyle = {
         top: "50%",
         transform: "translateY(-50%)",
         height: "70%"
+    },
+    header: {
+        height: "15%",
+        backgroundColor: "#545454",
+        textAlign: "center"
     }
 }
 

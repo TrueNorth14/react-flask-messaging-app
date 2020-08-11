@@ -29,7 +29,7 @@ const ChatLog = ({ ...props }) => {
         { name: "Vishnu", message: "This is my message" },
         { name: "Vishnu", message: "This is my message" },
         { name: "Vishnu", message: "This is my message" },
-    ]
+    ];
 
     return (
         <div className={classes.log}>

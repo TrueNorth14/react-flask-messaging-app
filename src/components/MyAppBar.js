@@ -19,7 +19,7 @@ const MyAppBar = () => {
                 </Typography>
                 <div>
                     <IconButton color={"white"}>
-                        <Brightness4OutlinedIcon />
+                        <Brightness4OutlinedIcon style={{fill: "white"}} />
                     </IconButton>
                 </div>
             </Toolbar>

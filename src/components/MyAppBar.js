@@ -3,8 +3,10 @@ import {
     AppBar,
     Toolbar,
     Typography,
-    Box
+    Box,
+    IconButton
 } from '@material-ui/core';
+import Brightness4OutlinedIcon from '@material-ui/icons/Brightness4Outlined';
 
 const MyAppBar = () => {
     return (
@@ -15,6 +17,11 @@ const MyAppBar = () => {
                         The Global Room
                     </Box>
                 </Typography>
+                <div>
+                    <IconButton color={"white"}>
+                        <Brightness4OutlinedIcon />
+                    </IconButton>
+                </div>
             </Toolbar>
         </AppBar>
     )

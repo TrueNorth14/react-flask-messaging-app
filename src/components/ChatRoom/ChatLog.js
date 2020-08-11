@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, List, ListItem } from '@material-ui/core';
+import { withStyles, List } from '@material-ui/core';
 import chatRoomStyle from '../../assets/styles/chatroomStyle';
 import ChatItem from './ChatItem';
 

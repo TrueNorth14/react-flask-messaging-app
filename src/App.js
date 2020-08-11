@@ -13,7 +13,7 @@ const theme = createMuiTheme({
 
 const initialState = {
   name: "default",
-  isEntered: false
+  isEntered: true 
 };
 
 const reducer = (state, { field, value }) => {

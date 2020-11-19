@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     AppBar,
     Toolbar,
     Typography,
     Box,
-    IconButton
+    IconButton,
+    withStyles
 } from '@material-ui/core';
 import Brightness4OutlinedIcon from '@material-ui/icons/Brightness4Outlined';
 
-const MyAppBar = () => {
+const MyAppBar = ({ ...props }) => {
+    const { themeHandler } = props;
     return (
         <AppBar >
             <Toolbar>
@@ -18,8 +20,8 @@ const MyAppBar = () => {
                     </Box>
                 </Typography>
                 <div>
-                    <IconButton color={"white"}>
-                        <Brightness4OutlinedIcon style={{fill: "white"}} />
+                    <IconButton color={"white"} onClick={() => themeHandler()}>
+                        <Brightness4OutlinedIcon style={{ fill: "white" }} />
                     </IconButton>
                 </div>
             </Toolbar>

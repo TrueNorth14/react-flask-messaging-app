@@ -5,15 +5,27 @@ import MyAppBar from './components/MyAppBar';
 import { createMuiTheme, CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 
-const theme = createMuiTheme({
+// const theme = createMuiTheme({
+//   palette: {
+//     type: "dark"
+//   }
+// })
+
+const light = {
   palette: {
     type: "light"
   }
-})
+}
+
+const dark = {
+  palette: {
+    type: "dark"
+  }
+}
 
 const initialState = {
   name: "default",
-  isEntered: true 
+  isEntered: false
 };
 
 const reducer = (state, { field, value }) => {
@@ -26,23 +38,29 @@ const reducer = (state, { field, value }) => {
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { name, isEntered } = state;
+  const { name, isEntered, theme } = state;
+
+  const appliedTheme = createMuiTheme(theme ? light : dark);
 
   const onChangeName = (e) => {
-    dispatch({ field: "name", value: e.target.value })
-    console.log({ name })
+    dispatch({ field: "name", value: e.target.value });
+    console.log({ name });
   }
 
   const onChangeEntered = (e) => {
-    dispatch({ field: "isEntered", value: e })
+    dispatch({ field: "isEntered", value: e });
+  }
+
+  const onChangeTheme = () => {
+    dispatch({ field: "theme", value: !theme });
   }
 
   return (
     <div>
-      <ThemeProvider theme={theme}>
-        <CssBaseline/>
-        <MyAppBar />
-        {isEntered ? <ChatRoom name={name} /> :
+      <ThemeProvider theme={appliedTheme}>
+        <CssBaseline />
+        <MyAppBar themeHandler={onChangeTheme} />
+        {isEntered ? <ChatRoom name={name} enterHandler={onChangeEntered} /> :
           <Login states={{ name, isEntered }} stateFunctions={{ onChangeName, onChangeEntered }} />}
       </ThemeProvider>
     </div>

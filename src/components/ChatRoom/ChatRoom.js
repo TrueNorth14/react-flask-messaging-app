@@ -6,12 +6,12 @@ import ChatLog from './ChatLog';
 import ChatInput from './ChatInput';
 
 const ChatRoom = ({ name, ...props }) => {
-    const { classes } = props;
+    const { classes, enterHandler } = props;
 
     return (
         <div className={classes.root}>
             <Paper elevation={8} className={classes.container}>
-                <ChatRoomHeader name={name} />
+                <ChatRoomHeader name={name} enterHandler={enterHandler} />
                 <Divider />
                 <ChatLog />
                 <ChatInput />
